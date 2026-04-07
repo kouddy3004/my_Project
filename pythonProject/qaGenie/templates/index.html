@@ -114,10 +114,13 @@
         <a class="nav-link" href="#contact">Contact</a>
     </nav>
     <div class="top-contacts">
-        <a href="javascript:void(0)" onclick="copyToClipboard('9597701718', 'Phone')"><i class="fas fa-phone-alt"></i></a>
-        <a href="https://www.linkedin.com/in/koushik-subramanian-4499a314b" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="javascript:void(0)" onclick="copyToClipboard('9597701718', 'Phone')"><i
+                class="fas fa-phone-alt"></i></a>
+        <a href="https://www.linkedin.com/in/koushik-subramanian-4499a314b" target="_blank"><i
+                class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/kouddy3004/myPythonFramework.git" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="javascript:void(0)" onclick="copyToClipboard('koushiksubramaniandotn@gmail.com', 'Email')"><i class="far fa-envelope"></i></a>
+        <a href="javascript:void(0)" onclick="copyToClipboard('koushiksubramaniandotn@gmail.com', 'Email')"><i
+                class="far fa-envelope"></i></a>
     </div>
 </header>
 
@@ -127,18 +130,34 @@
             <img src="/static/my_photo.png" alt="Koushik" class="profile-photo">
             <div class="about-text">
                 <h1 style="color: var(--white); font-size: 3rem; margin-bottom: 5px;">Koushik Subramanian</h1>
-                <p style="color: var(--primary); font-family: monospace; font-size: 1.1rem; margin-top: 0;">Senior Quality Test Engineer | QA Automation |<br> ETL & Data, API , UI Validation |<br>AI-Augmented Automation | LangChain & RAG </p>
+                <p style="color: var(--primary); font-family: monospace; font-size: 1.1rem; margin-top: 0;">Senior
+                    Quality Test Engineer | QA Automation |<br> ETL & Data, API , UI Validation |<br>AI-Augmented
+                    Automation | LangChain & RAG </p>
                 <div style="margin: 20px 0;">
-                <a href="/static/Koushik_Subramanian_Resume.pdf" download="Koushik_Subramanian_Resume.pdf" class="btn-gen" style="width: auto; padding: 10px 25px; display: inline-block; font-size: 0.8rem;">
-                    <i class="fas fa-file-download" style="margin-right: 8px;"></i> DOWNLOAD RESUME
-                </a>
-            </div>
+                    <a href="/static/Koushik_Subramanian_Resume.pdf" download="Koushik_Subramanian_Resume.pdf"
+                       class="btn-gen"
+                       style="width: auto; padding: 10px 25px; display: inline-block; font-size: 0.8rem;">
+                        <i class="fas fa-file-download" style="margin-right: 8px;"></i> DOWNLOAD RESUME
+                    </a>
+
+
+                </div>
                 <div class="section-header"><h2>About Me</h2></div>
                 <p>
-                    I am a Software Engineer with over <b>8 years of experience</b> in the Banking and Insurance domains.
-                    I specialize in building advanced automation frameworks that ensure data integrity and high-quality software releases.
-                    Currently, I am integrating <b>Generative AI</b> into the QA lifecycle to drive efficiency through intelligent automation.
+                    I am a Software Engineer with over <b><span id="dynamic-exp"></span>+ Years of Experience</b> in the
+                    Banking and Insurance
+                    domains.
+                    I specialize in building advanced automation frameworks that ensure data integrity and high-quality
+                    software releases.
+                    Currently, I am integrating <b>Generative AI</b> into the QA lifecycle to drive efficiency through
+                    intelligent automation.
                 </p>
+                <script>
+                    // Keep the UI consistent with the 2014 start date
+                    const startYear = 2014;
+                    const currentYear = new Date().getFullYear();
+                    document.getElementById('dynamic-exp').innerText = currentYear - startYear;
+                </script>
             </div>
         </div>
     </section>
@@ -151,8 +170,12 @@
             <h4>Oracle Financial Services Analytical Applications</h4>
             <span class="date">02/2022 — Present</span>
             <ul>
-                <li>Implemented cross-environment execution capabilities for seamless validation across Dev, QA, and Production.</li>
-                <li>Collaborated with Business Analysts to translate requirements into robust technical test specifications.</li>
+                <li>Implemented cross-environment execution capabilities for seamless validation across Dev, QA, and
+                    Production.
+                </li>
+                <li>Collaborated with Business Analysts to translate requirements into robust technical test
+                    specifications.
+                </li>
                 <li>Managed the end-to-end QA Lifecycle for high-stakes banking applications.</li>
                 <li>Increased team velocity by automating complex, repetitive data validation tasks.</li>
             </ul>
@@ -163,7 +186,9 @@
             <h4>Genpact HeadStrong and Capital Market</h4>
             <span class="date">04/2021 — 02/2022</span>
             <ul>
-                <li>Architected an automated testing suite for a fraud-detection middleware using Java, Selenium, and TestNG.</li>
+                <li>Architected an automated testing suite for a fraud-detection middleware using Java, Selenium, and
+                    TestNG.
+                </li>
                 <li>Reduced manual regression testing cycles by 40% through intelligent automation design.</li>
                 <li>Validated complex middleware logic to ensure compliance with financial security standards.</li>
             </ul>
@@ -184,8 +209,11 @@
             <h4>Cognizant Technology Solutions</h4>
             <span class="date">08/2014 — 06/2019</span>
             <ul>
-                <li>Built an automated data validation suite using Python, cx_Oracle, and Pytest for XML-to-DB integrity checks.</li>
-                <li>Mapped technical specs to ETL test scripts, ensuring 100% accuracy in large-scale data migrations.</li>
+                <li>Built an automated data validation suite using Python, cx_Oracle, and Pytest for XML-to-DB integrity
+                    checks.
+                </li>
+                <li>Mapped technical specs to ETL test scripts, ensuring 100% accuracy in large-scale data migrations.
+                </li>
             </ul>
         </div>
     </section>
@@ -195,7 +223,8 @@
         <div class="project-card">
             <span class="project-tag">AI & QA Automation</span>
             <h3>QA Genie: AI Orchestration Suite</h3>
-            <p>A sophisticated multi-agent AI tool that automates the generation of Jira tickets, BDD Gherkin scenarios, and Selenium scripts from simple requirements.</p>
+            <p>A sophisticated multi-agent AI tool that automates the generation of Jira tickets, BDD Gherkin scenarios,
+                and Selenium scripts from simple requirements.</p>
             <button class="btn-gen launch-btn" onclick="openModal()">Launch QA Genie</button>
         </div>
     </section>
@@ -206,7 +235,8 @@
         <p style="color: var(--white); font-size: 1.2rem; margin-top: 30px;">koushiksubramaniandotn@gmail.com</p>
         <p style="font-family: monospace; color: var(--primary);">+91 9597701718</p>
         <div style="margin-top: 30px;">
-            <a href="https://www.linkedin.com/in/koushik-subramanian-4499a314b" target="_blank" class="btn-gen" style="width: auto; padding: 15px 40px; display: inline-block;">Connect on LinkedIn</a>
+            <a href="https://www.linkedin.com/in/koushik-subramanian-4499a314b" target="_blank" class="btn-gen"
+               style="width: auto; padding: 15px 40px; display: inline-block;">Connect on LinkedIn</a>
         </div>
     </section>
 </div>
