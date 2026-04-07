@@ -9,6 +9,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 # ... after app = FastAPI() ...
 
@@ -55,12 +56,24 @@ def get_qa_chain(task_type):
     return prompt | model | StrOutputParser()
 
 
-@app.get("/")
-async def index(request: Request):
-    return templates.TemplateResponse(
-        request=request, name="index.html", context={"request": request}
-    )
+# @app.get("/")
+# async def index(request: Request):
+#     return templates.TemplateResponse(
+#         request=request, name="index.html", context={"request": request}
+#     )
 
+current_dir = os.path.dirname(os.path.realpath(__file__))
+
+
+@app.get("/")
+async def read_index():
+    # Construct the full path to index.html
+    file_path = os.path.join(current_dir, os.path.join("templates","index.html"))
+
+    if not os.path.exists(file_path):
+        return {"error": f"File not found at {file_path}"}
+
+    return FileResponse(file_path)
 
 @app.get("/favicon.ico", include_in_schema=False)
 async def favicon():
