@@ -99,6 +99,7 @@
             .about-wrapper { flex-direction: column; text-align: center; }
             .profile-photo { width: 200px; height: 200px; margin-bottom: 20px; }
             nav { gap: 15px; } .top-contacts { display: none; }
+            .services-grid, .projects-grid { grid-template-columns: 1fr !important; }
         }
     </style>
 </head>
@@ -111,6 +112,7 @@
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#experience">Experience</a>
         <a class="nav-link" href="#projects">My Projects</a>
+        <a class="nav-link" href="#services">Consulting</a>
         <a class="nav-link" href="#contact">Contact</a>
     </nav>
     <div class="top-contacts">
@@ -133,14 +135,16 @@
                 <p style="color: var(--primary); font-family: monospace; font-size: 1.1rem; margin-top: 0;">Senior
                     Quality Test Engineer | QA Automation |<br> ETL & Data, API , UI Validation |<br>AI-Augmented
                     Automation | LangChain & RAG </p>
-                <div style="margin: 20px 0;">
+                <div style="margin: 20px 0; display: flex; gap: 15px; flex-wrap: wrap;">
                     <a href="/static/Koushik_Subramanian_Resume.pdf" download="Koushik_Subramanian_Resume.pdf"
                        class="btn-gen"
                        style="width: auto; padding: 10px 25px; display: inline-block; font-size: 0.8rem;">
                         <i class="fas fa-file-download" style="margin-right: 8px;"></i> DOWNLOAD RESUME
                     </a>
-
-
+                    <a href="#services" class="btn-gen"
+                       style="width: auto; padding: 10px 25px; display: inline-block; font-size: 0.8rem; background: rgba(100, 255, 218, 0.1);">
+                        <i class="fas fa-handshake" style="margin-right: 8px;"></i> LET'S COLLABORATE
+                    </a>
                 </div>
                 <div class="section-header"><h2>About Me</h2></div>
                 <p>
@@ -220,19 +224,63 @@
 
     <section id="projects">
         <div class="section-header"><h2>My Projects</h2></div>
-        <div class="project-card">
-            <span class="project-tag">AI & QA Automation</span>
-            <h3>QA Genie: AI Orchestration Suite</h3>
-            <p>A sophisticated multi-agent AI tool that automates the generation of Jira tickets, BDD Gherkin scenarios,
-                and Selenium scripts from simple requirements.</p>
-            <button class="btn-gen launch-btn" onclick="openModal()">Launch QA Genie</button>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="project-card">
+                <span class="project-tag">AI & QA Automation</span>
+                <h3>QA Genie: AI Orchestration Suite</h3>
+                <p>A sophisticated multi-agent AI tool that automates the generation of Jira tickets, BDD Gherkin scenarios,
+                    and Selenium scripts from simple requirements.</p>
+                <button class="btn-gen launch-btn" onclick="openModal()">Launch QA Genie</button>
+            </div>
+            <div class="project-card">
+                <span class="project-tag">AI & RAG</span>
+                <h3>Koushik's AI Resume Assistant</h3>
+                <p>A RAG-powered conversational chatbot trained on my professional experience. Ask it anything about my skills, projects, domain expertise, and background — and get instant answers.</p>
+                <button class="btn-gen launch-btn" onclick="toggleBot()">
+                    <i class="fas fa-robot" style="margin-right: 8px;"></i> Chat with AI Assistant
+                </button>
+            </div>
         </div>
+    </section>
+
+    <section id="services">
+        <div class="section-header"><h2>Consulting & Expertise</h2></div>
+        <p style="margin-bottom: 30px;">Open to consulting engagements and collaborative projects. Here is where I add value:</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="project-card">
+                <span class="project-tag">🤖 AI Engineering</span>
+                <h3>Custom AI Tools & Chatbots</h3>
+                <p>Build AI-powered chatbots, document assistants, and workflow automation using LangChain, RAG, and LLM APIs (ChatGPT / Claude).</p>
+            </div>
+            <div class="project-card">
+                <span class="project-tag">💻 Engineering & Automation</span>
+                <h3>Python Scripts & Automation Bots</h3>
+                <p>Build Python automation scripts, web scrapers, REST API integrations, and database automation tools for your business.</p>
+            </div>
+            <div class="project-card">
+                <span class="project-tag">📊 Data & Analytics</span>
+                <h3>Data Validation & Excel Automation</h3>
+                <p>Data cleaning, ETL validation, Excel dashboards, web research, and reporting — delivered with 100% accuracy.</p>
+            </div>
+            <div class="project-card">
+                <span class="project-tag">✍️ Technical Communication</span>
+                <h3>Technical Writing & Documentation</h3>
+                <p>Technical articles, QA documentation, product specifications, and professional content for engineering and business audiences.</p>
+            </div>
+        </div>
+        
     </section>
 
     <section id="contact" style="text-align: center;">
         <div class="section-header"><h2>Get In Touch</h2></div>
         <p>I am always open to discussing new opportunities in AI, Automation, and Engineering.</p>
-        <p style="color: var(--white); font-size: 1.2rem; margin-top: 30px;">koushiksubramaniandotn@gmail.com</p>
+        <p style="color: var(--white); font-size: 1.2rem; margin-top: 30px;" id="contact-email"></p>
+        <script>
+            const u = "koushiksubramaniandotn";
+            const d = "gmail.com";
+            const el = document.getElementById("contact-email");
+            el.innerHTML = `<a href="mailto:${u}@${d}" style="color: var(--white); text-decoration: none;">${u}@${d}</a>`;
+        </script>
         <p style="font-family: monospace; color: var(--primary);">+91 9597701718</p>
         <div style="margin-top: 30px;">
             <a href="https://www.linkedin.com/in/koushik-subramanian-4499a314b" target="_blank" class="btn-gen"
@@ -276,7 +324,7 @@
 
 <button id="bot-toggle" onclick="toggleBot()"><i class="fas fa-robot"></i></button>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Modal Helpers
     function openModal() { document.getElementById('genieModal').style.display = 'flex'; document.body.style.overflow = 'hidden'; }
     function closeModal() { document.getElementById('genieModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
@@ -339,7 +387,7 @@
             const d = await r.json();
             document.getElementById(loadingId).innerText = d.result;
         } catch(e) {
-            document.getElementById(loadingId).innerText = "I'm having trouble connecting to the network.";
+            document.getElementById(loadingId).innerText = "Error connecting to AI.";
         }
         h.scrollTop = h.scrollHeight;
     }
